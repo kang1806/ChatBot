@@ -15,7 +15,11 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    return str(english_bot.get_response(userText))
+    bot_response = english_bot.get_response(userText)
+    if bot_response.confidence > 0.5:
+        return str(bot_response)
+    else:
+        return str("I dont understand this")
 
 
 if __name__ == "__main__":
