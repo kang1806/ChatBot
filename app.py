@@ -11,6 +11,11 @@ trainer.train("chatterbot.corpus.english")
 @app.route("/")
 def home():
     return render_template("index.html")
+    
+@app.route("/training")
+def training():
+    return render_template("training.html")
+    
 
 @app.route("/get")
 def get_bot_response():
@@ -20,6 +25,8 @@ def get_bot_response():
         return str(bot_response)
     else:
         return str("I dont understand this")
+        
+
 
 
 if __name__ == "__main__":
