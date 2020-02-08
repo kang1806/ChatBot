@@ -16,8 +16,8 @@
       <div id="chatbox">
       </div>
       <div id="userInput">
-			<textarea rows="4" id="textInput" type="text" name="msg" placeholder="Enter Your Message...."></textarea>
-			<input id="buttonInput" type="submit" value="Send">
+			     <textarea rows="4" id="textInput" type="text" name="msg" placeholder="Enter Your Message...."></textarea>
+			     <input id="buttonInput" type="submit" value="Send">
       </div>
       <script>
 	  function inputData(determine) {
@@ -27,6 +27,7 @@
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
           document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            $.get("/getTrain", { msg: rawText })
 		  }
 	  if (determine%2 == 0){
 		  var rawText = $("#textInput").val();
@@ -34,9 +35,9 @@
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
           document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-
+          $.get("/getTrain", { msg: rawText })
 		}
-         
+
         }
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
@@ -44,7 +45,7 @@
             }
         });
         $("#buttonInput").click(function() {
-		  determine = determine + 1;
+		      determine = determine + 1;
           inputData(determine);
         })
       </script>
