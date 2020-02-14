@@ -6,9 +6,10 @@ import pymongo
 
 app = Flask(__name__)
 
-english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
-trainer = ChatterBotCorpusTrainer(english_bot)
-trainer.train("chatterbot.corpus.english")
+english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.MongoDatabaseAdapter",
+                logic_adapters=['chatterbot.logic.BestMatch'],
+                database_uri="mongodb://localhost:27017/chatbot"
+                )
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["chatbot"]
