@@ -18,10 +18,17 @@
 		</div>
       </div>
       <div id="userInput">
-			<textarea rows="4" id="textInput" type="text" name="msg" placeholder="Enter Your Message...."></textarea>
-			<input id="buttonInput" type="submit" value="Send">
+			<textarea rows="4"  id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
+			<input disabled id="buttonInput" type="submit" value="Send">
       </div>
       <script>
+        function validate(obj) {
+          if (obj.value.length > 0) {
+            document.getElementById("buttonInput").disabled = false; }
+          else {
+            document.getElementById("buttonInput").disabled = true; }
+
+        }
         function getBotResponse() {
           var rawText = $("#textInput").val();
           var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';

@@ -16,28 +16,33 @@
       <div id="chatbox">
       </div>
       <div id="userInput">
-			     <textarea rows="4" id="textInput" type="text" name="msg" placeholder="Enter Your Message...."></textarea>
-			     <input id="buttonInput" type="submit" value="Send">
+			     <textarea rows="4" id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
+			     <input disabled id="buttonInput" type="submit" value="Send">
       </div>
       <script>
-	  function inputData(determine) {
-	  if (determine%2 == 1){
-		  var rawText = $("#textInput").val();
-          var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-            $.get("/getTrain", { msg: rawText })
-		  }
-	  if (determine%2 == 0){
-		  var rawText = $("#textInput").val();
-          var userHtml = '<div id="speech-bubble-bot"><p class="botText"><span>' + rawText + '</span></p></div>';
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-          $.get("/getTrain", { msg: rawText })
-		}
-
+      function validate(obj) {
+          if (obj.value.length > 0) {
+            document.getElementById("buttonInput").disabled = false; }
+          else {
+            document.getElementById("buttonInput").disabled = true; }
+        }
+	     function inputData(determine) {
+	        if (determine%2 == 1){
+		          var rawText = $("#textInput").val();
+              var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
+              $("#textInput").val("");
+              $("#chatbox").append(userHtml);
+              document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+              $.get("/getTrain", { msg: rawText })
+		          }
+	        if (determine%2 == 0){
+		          var rawText = $("#textInput").val();
+              var userHtml = '<div id="speech-bubble-bot"><p class="botText"><span>' + rawText + '</span></p></div>';
+              $("#textInput").val("");
+              $("#chatbox").append(userHtml);
+              document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+              $.get("/getTrain", { msg: rawText })
+		          }
         }
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
