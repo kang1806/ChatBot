@@ -6,5 +6,9 @@ with open('output.json') as json_file:
     for line in json_file:
         lines.append(line[50:-3])
 
-    with open (r'C:\Users\wenka_000\Desktop\ChatBot\TestChatBot\testing.yml', 'w') as file:
-        documents = yaml.dump(lines, file)
+    with open (r'C:\Users\wenka_000\Desktop\ChatBot\TestChatBot\trained.yml', 'w') as file:
+        file.write("categories:\n")
+        file.write("- trained\n")
+        file.write("conversations:\n")
+        file.write("- ")
+        yaml.dump(lines, file)

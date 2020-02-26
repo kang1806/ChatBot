@@ -13,23 +13,24 @@
 	<div id= "content" style ="height: 100%; overflow: hidden">
     <div>
       <div id="chatbox">
-		<div id="speech-bubble-bot">
-			<p class="botText"><span>Hi! I'm Lucas.</span></p>
-		</div>
+		      <div id="speech-bubble-bot">
+			         <p class="botText"><span>Hi! I'm Lucas.</span></p>
+		      </div>
       </div>
       <div id="userInput">
-			<textarea rows="4"  id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
-			<input disabled id="buttonInput" type="submit" value="Send">
+			     <textarea rows="4"  id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
+			        <input disabled id="buttonInput" type="submit" value="Send">
       </div>
+
       <script>
         function validate(obj) {
           if (obj.value.length > 0) {
             document.getElementById("buttonInput").disabled = false; }
           else {
             document.getElementById("buttonInput").disabled = true; }
-
         }
         function getBotResponse() {
+          document.getElementById("buttonInput").disabled = true;
           var rawText = $("#textInput").val();
           var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
           $("#textInput").val("");
