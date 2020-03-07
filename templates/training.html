@@ -37,7 +37,7 @@
 	          function inputData(determine) {
                document.getElementById("buttonInput").disabled = true;
 	             if (determine%2 == 1){
-		               var rawText = $("#textInput").val();
+		           var rawText = $("#textInput").val();
                    var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
                    $("#textInput").val("");
                    $("#chatbox").append(userHtml);
@@ -45,7 +45,7 @@
                    $.get("/getTrain", { msg: rawText })
 		               }
 	             if (determine%2 == 0){
-		               var rawText = $("#textInput").val();
+		           var rawText = $("#textInput").val();
                    var userHtml = '<div id="speech-bubble-bot"><p class="botText"><span>' + rawText + '</span></p></div>';
                    $("#textInput").val("");
                    $("#chatbox").append(userHtml);
@@ -55,7 +55,8 @@
         }
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
-                inputData();
+				determine = determine + 1
+                inputData(determine);
             }
         });
         $("#buttonInput").click(function() {
