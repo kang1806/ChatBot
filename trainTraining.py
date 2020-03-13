@@ -1,6 +1,5 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-import pymongo
 
 
 english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.MongoDatabaseAdapter",
@@ -9,8 +8,3 @@ english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.MongoDat
                 )
 trainer = ChatterBotCorpusTrainer(english_bot)
 trainer.train("chatterbot.corpus.training")
-
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["chatbot"]
-mycol = mydb["training"]
-mycol.drop()

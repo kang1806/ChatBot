@@ -9,19 +9,19 @@
 	    <div id="header" style="background-color:#c2c2d6; text-align:center; border-bottom:1px SOLID BLACK; color:WHITE; line-height:50px; font-size:40px; padding:5px"; "height: 100%; overflow: hidden">
 		      <button onclick="location.href='http://127.0.0.1:5000/'" type="button" style = "height: 40px; position:absolute; right: 420px; top: 6; font-size: 20px; background-color: #e7e7e7; border-width: thin; color: black; padding: 10px 26px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer;">
             Main Page</button>
-		          <h1>Training</h1>
+		          <h1>Data Entry</h1>
       </div>
 	     <div id= "content" style ="height: 100%; overflow: hidden">
          <div>
            <div id="chatbox">
              <b class="smallBox">Explanation</b>
-             <div id="speech-bubble-user" style ="margin-left: 6%; margin-right: 15%">
-   			         <p class="userText"><span>Train Your Data by Entering in the Message Box.</span></p>
+             <div id="speech-bubble-bot" style ="margin-left: 6%; margin-right: 15%">
+   			         <p class="botText"><span>Input Your Data by Entering in the Message Box. Message will be Displayed as Conversation Chatting between 2 people</span></p>
    		       </div>
-             <div id="speech-bubble-bot" style ="margin-left: 15%; margin-right: 6%">
-                <p class="botText"><span>Message Displayed as Conversation Chatting</span></p>
+             <div id="speech-bubble-user" style ="margin-left: 15%; margin-right: 6%">
+                <p class="userText"><span>Your Data inputed will be trained within 7 days</span></p>
              </div>
-             <b class="smallBox">Data Training</b>
+             <b class="smallBox">Data Entry</b>
            </div>
            <div id="userInput">
 			          <textarea rows="4" id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
@@ -38,7 +38,7 @@
                document.getElementById("buttonInput").disabled = true;
 	             if (determine%2 == 1){
 		           var rawText = $("#textInput").val();
-                   var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
+                   var userHtml = '<b class= "botBox">Lucas</b><div id="speech-bubble-bot"><p class="botText"><span>' + rawText + '</span></p></div>';
                    $("#textInput").val("");
                    $("#chatbox").append(userHtml);
                    document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -46,7 +46,7 @@
 		               }
 	             if (determine%2 == 0){
 		           var rawText = $("#textInput").val();
-                   var userHtml = '<div id="speech-bubble-bot"><p class="botText"><span>' + rawText + '</span></p></div>';
+                   var userHtml = '<b class= "userBox">You</b><div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
                    $("#textInput").val("");
                    $("#chatbox").append(userHtml);
                    document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
@@ -55,7 +55,8 @@
         }
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
-				determine = determine + 1
+                e.preventDefault();
+				        determine = determine + 1
                 inputData(determine);
             }
         });

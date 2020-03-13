@@ -13,6 +13,7 @@
 	<div id= "content" style ="height: 100%; overflow: hidden">
     <div>
       <div id="chatbox">
+        <b class= "botBox">Lucas</b>
 		      <div id="speech-bubble-bot">
 			         <p class="botText"><span>Hi! I'm Lucas.</span></p>
 		      </div>
@@ -32,18 +33,19 @@
         function getBotResponse() {
           document.getElementById("buttonInput").disabled = true;
           var rawText = $("#textInput").val();
-          var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
+          var userHtml = '<b class= "userBox">You</b><div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
           document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           $.get("/getResponse", { msg: rawText }).done(function(data) {
-            var botHtml = '<div id="speech-bubble-bot"><p class="botText"><span>' + data + '</span></p></div>';
+            var botHtml = '<b class= "botBox">Lucas</b><div id="speech-bubble-bot"><p class="botText"><span>' + data + '</span></p></div>';
             $("#chatbox").append(botHtml);
             document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           });
         }
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
+                e.preventDefault();
                 getBotResponse();
             }
         });

@@ -38,7 +38,8 @@ def get_bot_response():
     userText = request.args.get('msg')
     print (userText)
     bot_response = english_bot.get_response(userText)
-    if bot_response.confidence > 0.5:
+    print (bot_response.confidence)
+    if bot_response.confidence > 0.0005:
         return str(bot_response)
     else:
         return str("I dont understand this")
