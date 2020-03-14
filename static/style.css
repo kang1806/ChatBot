@@ -39,7 +39,7 @@ h3 {
 #chatbox {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 80%;
     margin-top: 40px;
 
 }
@@ -47,7 +47,7 @@ h3 {
 #userInput {
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 80%;
     margin-top: 60px;
 
 }
@@ -66,7 +66,6 @@ h3 {
     font-size: 25px;
 	  height: 100px;
 	  position:relative;
-	  bottom: 44px;
 }
 
 .button {
@@ -85,7 +84,7 @@ h3 {
 	  margin-right: 2%;
 	  margin-left:2%;
     font-family: monospace;
-    font-size: 25px;
+    font-size: 30px;
     text-align: justify;
     line-height: 40px;
 	  word-wrap: break-word;
@@ -101,8 +100,9 @@ h3 {
 	  margin-right: 2%;
 	  margin-left:2%;
     font-family: monospace;
-    font-size: 25px;
+    font-size: 30px;
     text-align: justify;
+    direction:rtl;
     line-height: 40px;
 	  word-wrap: break-word;
 }
@@ -121,6 +121,7 @@ h3 {
     margin-left: 35%;
     margin-right: 35%;
     border-radius: 10px;
+    white-space: nowrap;
 }
 
 
@@ -128,8 +129,8 @@ h3 {
 	position: relative;
 	background: #99ddff;
 	border-radius: .4em;
-	margin-left: 30%;
-	margin-right: 12%;
+	margin-left: 10%;
+	margin-right: 20%;
 }
 
 #speech-bubble-user:after {
@@ -150,8 +151,8 @@ h3 {
 	position: relative;
 	background: #ffcc66;
 	border-radius: .4em;
-	margin-right: 26%;
-	margin-left: 16%;
+	margin-right: 10%;
+	margin-left: 20%;
 }
 
 #speech-bubble-bot:after {

@@ -6,9 +6,11 @@
   </head>
   <body>
 	<div id="header" style="background-color:#c2c2d6; text-align:center; border-bottom:1px SOLID BLACK; color:WHITE; line-height:50px; font-size:40px; padding:5px"; "height: 100%; overflow: hidden">
-		<button onclick="location.href='http://127.0.0.1:5000/training'" type="button" style = "height: 40px; position:absolute; right: 420px; top: 6; font-size: 20px; background-color: #e7e7e7; border-width: thin; color: black; padding: 10px 26px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer;">
+    <div style =  "display: inline-flex">
+    <h1>Chatting</h1>
+    <button onclick="location.href='/training'" type="button" style = "height: 50px;font-size: 30px; background-color: #e7e7e7; border-width: thin; color: black; padding: 10px 26px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer;">
          Training</button>
-		<h1>Age People Chatbot</h1>
+    </div>
 	</div>
 	<div id= "content" style ="height: 100%; overflow: hidden">
     <div>
@@ -19,8 +21,10 @@
 		      </div>
       </div>
       <div id="userInput">
+        <div style="display: inline-flex; width: 100%">
 			     <textarea rows="4"  id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
 			        <input disabled id="buttonInput" type="submit" value="Send">
+        </div>
       </div>
 
       <script>

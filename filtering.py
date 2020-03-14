@@ -42,3 +42,4 @@ trainer.train("chatterbot.corpus.training")
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["chatbot"]
 mycol = mydb["training"]
+mycol.drop()
