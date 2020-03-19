@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-	<div id="header" style="background-color:#c2c2d6; text-align:center; border-bottom:1px SOLID BLACK; color:WHITE; line-height:50px; font-size:40px; padding:5px"; "height: 100%; overflow: hidden">
+	<div id="header" style="background-color:#c2c2d6; text-align:center; border-bottom:1px SOLID BLACK; color:WHITE; line-height:50px; font-size:60px; padding:10px"; "height: 100%; overflow: hidden">
     <div style =  "display: inline-flex">
     <h1>Chatting</h1>
     <button onclick="location.href='/training'" type="button" style = "height: 50px;font-size: 30px; background-color: #e7e7e7; border-width: thin; color: black; padding: 10px 26px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer;">
@@ -17,7 +17,7 @@
       <div id="chatbox">
         <b class= "botBox">Lucas</b>
 		      <div id="speech-bubble-bot">
-			         <p class="botText"><span>Hi! I'm Lucas.</span></p>
+			         <p class="botText" ><span>Hi! I'm Lucas.</span></p>
 		      </div>
       </div>
       <div id="userInput">
@@ -37,12 +37,22 @@
         function getBotResponse() {
           document.getElementById("buttonInput").disabled = true;
           var rawText = $("#textInput").val();
-          var userHtml = '<b class= "userBox">You</b><div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
+          var textCount = document.getElementById("textInput").value.length;
+          if (textCount <= 10){
+            var userHtml = '<b class= "userBox">You</b><div id="speech-bubble-user" style = "margin-left: ' +(80 - (textCount)*5) +'%"><p class="userText"><span>' + rawText + '</span></p></div>';
+          } else {
+            var userHtml = '<b class= "userBox">You</b><div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
+          }
           $("#textInput").val("");
           $("#chatbox").append(userHtml);
           document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           $.get("/getResponse", { msg: rawText }).done(function(data) {
-            var botHtml = '<b class= "botBox">Lucas</b><div id="speech-bubble-bot"><p class="botText"><span>' + data + '</span></p></div>';
+            var botCount = data.length;
+            if (botCount <= 10){
+              var botHtml = '<b class= "botBox">Lucas</b><div id="speech-bubble-bot" style = "margin-right: ' +(80 - (botCount)*5) +'%"><p class="botText"><span>' + data + '</span></p></div>';
+            } else {
+              var botHtml = '<b class= "botBox">Lucas</b><div id="speech-bubble-bot"><p class="botText"><span>' + data + '</span></p></div>';
+            }
             $("#chatbox").append(botHtml);
             document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
           });

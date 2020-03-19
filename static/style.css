@@ -47,24 +47,25 @@ h3 {
 #userInput {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 90%;
     margin-top: 60px;
 
 }
 
 #textInput {
     width: 85%;
+    margin-left: 5%;
     border: solid #009688;
     border-bottom: 3px solid #009688;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #buttonInput {
     padding: 5px;
     font-family: monospace;
-    font-size: 25px;
-	  height: 100px;
+    font-size: 35px;
+	  height: 150px;
 	  position:relative;
 }
 
@@ -81,44 +82,41 @@ h3 {
  }
 .botText {
     color: black;
-	  margin-right: 2%;
-	  margin-left:2%;
+	  margin-right: 3%;
+	  margin-left:3%;
     font-family: monospace;
-    font-size: 30px;
+    font-size: 40px;
     text-align: justify;
     line-height: 40px;
 	  word-wrap: break-word;
 }
 
 .botText span {
-    background-color: #ffcc66;
     border-radius: 0;
 }
 
 .userText {
     color: black;
-	  margin-right: 2%;
-	  margin-left:2%;
+	  margin-right: 3%;
+	  margin-left:3%;
     font-family: monospace;
-    font-size: 30px;
+    font-size: 40px;
     text-align: justify;
-    direction:rtl;
     line-height: 40px;
 	  word-wrap: break-word;
 }
 
 .userText span {
-    background-color: #99ddff;
     border-radius: 0;
   }
 
 .smallBox {
     padding: 5px;
-    font-size: 18px;
+    font-size: 26px;
     font-family: monospace;
     text-align: center;
     background-color: #e6e600;
-    margin-left: 35%;
+    margin-left: 45%;
     margin-right: 35%;
     border-radius: 10px;
     white-space: nowrap;
@@ -129,8 +127,10 @@ h3 {
 	position: relative;
 	background: #99ddff;
 	border-radius: .4em;
-	margin-left: 10%;
-	margin-right: 20%;
+  margin-top: 15px;
+  padding: 1px;
+	margin-left: 20%;
+  margin-right:20%
 }
 
 #speech-bubble-user:after {
@@ -143,7 +143,7 @@ h3 {
 	border: 15px solid transparent;
 	border-left-color: #99ddff;
 	border-right: 0;
-	margin-top: -15px;
+	margin-top: -45px;
 	margin-right: -15px;
 }
 
@@ -151,8 +151,11 @@ h3 {
 	position: relative;
 	background: #ffcc66;
 	border-radius: .4em;
+  margin-top: 15px;
 	margin-right: 10%;
+  padding: 1px;
 	margin-left: 20%;
+  margin-right:20%
 }
 
 #speech-bubble-bot:after {
@@ -165,7 +168,7 @@ h3 {
 	border: 15px solid transparent;
 	border-right-color: #ffcc66;
 	border-left: 0;
-	margin-top: -15px;
+	margin-top: -50px;
 	margin-left: -15px;
 
 
@@ -174,19 +177,21 @@ h3 {
   float: right;
   border: 2px solid black;
   padding: 10px;
+  margin-top: 10px;
   border-radius: 10px;
   background: #99ddff;
   font-family: monospace;
-  font-size: 20px;
+  font-size: 30px;
 }
  .botBox {
    float: left;
    border: 2px solid black;
    padding: 10px;
+   margin-top: 10px;
    border-radius: 10px;
    background: #ffcc66;
    font-family: monospace;
-   font-size: 20px;
+   font-size: 30px;
  }
 
 #tidbit {
