@@ -3,12 +3,13 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>chatbot</title>
   </head>
   <body>
 	<div id="header" style="background-color:#c2c2d6; text-align:center; border-bottom:1px SOLID BLACK; color:WHITE; line-height:50px; font-size:60px; padding:10px"; "height: 100%; overflow: hidden">
     <div style =  "display: inline-flex">
-    <h1>Chatting</h1>
-    <button onclick="location.href='/training'" type="button" style = "height: 50px;font-size: 30px; background-color: #e7e7e7; border-width: thin; color: black; padding: 10px 26px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer;">
+      <h1>Chatting</h1>
+      <button onclick="location.href='/training'" type="button" style = "height: 50px;font-size: 30px; background-color: #e7e7e7; border-width: thin; color: black; padding: 10px 26px; text-align: center; text-decoration: none; display: inline-block; cursor: pointer;">
          Training</button>
     </div>
 	</div>
@@ -23,7 +24,7 @@
       <div id="userInput">
         <div style="display: inline-flex; width: 100%">
 			     <textarea rows="4"  id="textInput" type="text" name="msg" placeholder="Enter Your Message...." onkeyup="validate(this)"></textarea>
-			        <input disabled id="buttonInput" type="submit" value="Send">
+			        <input disabled id="buttonInput" type="submit" value="Chat">
         </div>
       </div>
 

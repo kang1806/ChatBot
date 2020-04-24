@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>training</title>
   </head>
   <body>
 	   <script> var determine = 0 </script>
@@ -43,7 +44,7 @@
 	             if (determine%2 == 1){
 		               var rawText = $("#textInput").val();
                    var textCount = document.getElementById("textInput").value.length;
-                   if (textCount <= 18){
+                   if (textCount <= 4){
                      var userHtml = '<div id="speech-bubble-bot" style = "margin-right: ' +(80 - (textCount)*5) +'%"><p class="botText"><span>' + rawText + '</span></p></div>';
                    } else {
                      var userHtml = '<div id="speech-bubble-bot"><p class="botText"><span>' + rawText + '</span></p></div>';
@@ -56,7 +57,7 @@
 	             if (determine%2 == 0){
 		               var rawText = $("#textInput").val();
                    var textCount = document.getElementById("textInput").value.length;
-                   if (textCount <= 18){
+                   if (textCount <= 4){
                      var userHtml = '<div id="speech-bubble-user" style = "margin-left: ' +(80 - (textCount)*5) +'%"><p class="userText"><span>' + rawText + '</span></p></div>';
                    } else {
                      var userHtml = '<div id="speech-bubble-user"><p class="userText"><span>' + rawText + '</span></p></div>';
